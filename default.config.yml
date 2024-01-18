@@ -1,11 +1,12 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
-configure_terminal: true
-configure_osx: true
+configure_dotfiles: false
+configure_terminal: false
+configure_osx: false
+configure_dock: false
+configure_sudoers: false
 
-# Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove: []
  - Finder
@@ -22,16 +23,6 @@ dockitems_remove: []
  - Terminal
  - visual-studio-code
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
-dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
-dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
-
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - sqlite
@@ -43,7 +34,9 @@ homebrew_installed_packages:
   - wget
   - brew-cask
 
-homebrew_taps: []
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -56,12 +49,17 @@ homebrew_cask_apps:
   - visual-studio-code
   - discord
   - signal
+  - vagrant
 
-# See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
 mas_email: ""
 mas_password: ""
 
-osx_script: "~/.osx --no-restart"
-# Glob pattern to ansible task files to run after all other tasks are finished.
+composer_packages: []
+gem_packages: []
+npm_packages: []
+pip_packages: []
+
+configure_sublime: false
+
 post_provision_tasks: []
